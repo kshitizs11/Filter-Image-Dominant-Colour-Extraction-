@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dominant Colour Extraction</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		.heading{
+			font-weight: 100;
+			font-size: 4em;
+			text-shadow: 1px 1px 5px black;
+		}
+		.si{
+			font-size: 20px;
+		}
+		.heading1{
+			text-align: center;
+		}
+		.but{
+			margin-left: 80px;
+		}
+		.num{
+			margin-left: 80px;
+		}
+		img{
+			height: 90%;
+			width: 100%;
+			border: 10px solid black;
+			margin-top: 30px;
+			margin-left: 140px;
+		}
+		.im{
+			border:2px solid black;
+
+		}
+		.jum{
+			border: 5px solid black;
+		}
+		.text-block {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			background-color: black;
+			color: white;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		body {
+			background-color: background: -webkit-gradient(radial, center center, 0, center center, 460, from(#15F4EE), to(#1F2833));
+
+  /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #15F4EE, #1F2833);
+
+  /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #15F4EE, #1F2833);
+
+  /* IE 10 */
+    background: -ms-radial-gradient(circle, #15F4EE, #1F2833);
+}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron jum">
+			<div class="container">
+				<h1 class="heading"><center><i><b>Filter The Image</b></i></center></h1>
+				<p class="heading1"><i>Upload Your Image & The Number Of Colors You Want In Your Image</i></p>
+			</div>			
+		</div>
+		<br>
+		<br>
+		<form action="/" method="POST" enctype="multipart/form-data" class="form-inline">
+				<label class="si"><b>Image: &nbsp;&nbsp;</b></label>
+				<input class="form-control im" type="file" name="userfile" placeholder="Your Image">
+				<label class="num si"><b>Enter The Number:  &nbsp;&nbsp;</b></label>
+				<input type="text" class="im" name="k_value" placeholder="Number">
+				<button type="submit" class="btn btn-info but">Submit</button>
+		</form>
+		{% if your_result %}
+		<div class="row">
+			<div class="col-sm-4">
+				<img src="{{your_result['path']}}">
+				<div class="text-block">
+					<h4>Before</h4>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<img src="{{your_result['new_path']}}",alt="Image of Seal">
+				<div class="text-block">
+					<h4>After</h4>
+				</div>
+		    </div>
+		</div>
+		
+		{% endif %}
+	</div>
+</body>
+</html>
