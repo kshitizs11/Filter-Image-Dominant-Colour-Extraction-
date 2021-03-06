@@ -7,5 +7,5 @@ The K-means clustering algorithm defines a number K of clusters and the best “
 #### 3) Compute and place the new centroid of each cluster.
 #### 4) Reassign the data points to the new closest cluster. If any reassignment took place go to step 3 else the model is ready.
 # Produced Result
-<img src="Screenshot(773).png">
-<img src="Screenshot(772).png">
+<img src="Screenshot (773).png">
+<img src="Screenshot (772).png">
